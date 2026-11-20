@@ -1,2 +1,4 @@
 Remote Tab Opener SDK Lite
 SDK package: 8.6.0
+Built against plugin behavior: 8.6.0
+Updated: 2026-08-22

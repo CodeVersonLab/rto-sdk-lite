@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTO SDK Lite — local target form</title>
+<link rel="stylesheet" href="../assets/sdk.css">
+<style>
+body{background:#f8fafc;color:#0f172a}
+.wrap{max-width:860px}
+.card{background:#fff;border-color:#e2e8f0;color:#0f172a}
+.field input,.field select,.field textarea{background:#fff;color:#0f172a;border-color:#cbd5e1}
+.result{background:#f8fafc;border-color:#e2e8f0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>Local target form</h1>
+    <p>This page is intentionally boring. That makes it perfect for a remote automation demo.</p>
+  </div>
+  <section class="card">
+    <form id="demo-form">
+      <div class="field">
+        <label for="firstName">First name</label>
+        <input id="firstName" value="">
+      </div>
+      <div class="field">
+        <label for="city">City</label>
+        <input id="city" value="">
+      </div>
+      <div class="field">
+        <label for="favoriteColor">Favorite color</label>
+        <select id="favoriteColor">
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="purple">Purple</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="4">Please be kind to robots.</textarea>
+      </div>
+      <label class="row" style="margin:10px 0">
+        <input id="newsletter" type="checkbox">
+        <span>Join the tiny newsletter for dramatic cursor updates</span>
+      </label>
+      <div class="row">
+        <button class="primary" id="btnSubmit" type="submit">Submit form</button>
+        <button id="btnReset" type="reset">Reset</button>
+      </div>
+    </form>
+  </section>
+  <section class="card" style="margin-top:16px">
+    <h2>Result</h2>
+    <div class="result" id="resultText">Nothing submitted yet.</div>
+  </section>
+</div>
+<script>
+(function(){
+  var form = document.getElementById('demo-form');
+  var out = document.getElementById('resultText');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var firstName = document.getElementById('firstName').value.trim() || '(empty)';
+    var city = document.getElementById('city').value.trim() || '(empty)';
+    var favoriteColor = document.getElementById('favoriteColor').value;
+    var notes = document.getElementById('notes').value.trim() || '(empty)';
+    var newsletter = document.getElementById('newsletter').checked ? 'yes' : 'no';
+    out.textContent = 'Hello ' + firstName + ' from ' + city + '. Favorite color: ' + favoriteColor + '. Newsletter: ' + newsletter + '. Notes: ' + notes;
+  });
+})();
+</script>
+</body>
+</html>

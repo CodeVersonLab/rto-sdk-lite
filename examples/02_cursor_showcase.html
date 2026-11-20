@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTO SDK Lite — 02 Cursor showcase</title>
+<link rel="stylesheet" href="assets/sdk.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>02 — Cursor showcase <span class="badge">visual demo</span></h1>
+    <p>This is the “now we are having fun” demo: open the local target page, guide the remote cursor across the form, type values, click submit, and read the result.</p>
+  </div>
+  <div class="demo-journey"><div><div class="demo-journey-title">SDK demo 2 of 3 — Cursor</div><div class="small">Visible overlay, highlights, and readback.</div></div><div class="demo-journey-links"><a href="01_minimal_connection.html">Previous</a><a href="03_full_demo_local.html">Next</a></div></div>
+  <div style="margin:16px 0"><div class="proof-console" data-rto-proof="sdk" data-proof-title="SDK proof" aria-label="SDK demo storyboard">
+  <div class="proof-console-top"><span></span><span></span><span></span><strong>SDK proof</strong></div>
+  <div class="proof-console-row ok"><b>1</b><span>Connection checked</span><code>RTOconnectOnce</code></div>
+  <div class="proof-console-row"><b>2</b><span>Host policy visible</span><code>allowlist</code></div>
+  <div class="proof-console-row"><b>3</b><span>Controlled tab reused</span><code>tabKey</code></div>
+  <div class="proof-console-row ok"><b>4</b><span>Overlay + highlight</span><code>DOM safe</code></div>
+</div></div>
+
+  <div class="grid grid-2">
+    <section class="card">
+      <h2>Run the visual tour</h2>
+      <div class="note warn">Tip: if the target host is not allow-listed yet, start with the first example. Once approved, this page becomes much more theatrical.</div>
+      <div class="row" style="margin-top:12px">
+        <button class="primary" id="btnRun">Run cursor tour</button>
+        <button id="btnFocus">Focus target tab</button>
+        <button class="ghost" id="btnClose">Close target tab</button>
+      </div>
+      <hr>
+      <div class="kpis">
+        <div class="kpi"><span class="small">tabKey</span><b id="tabKeyLabel">rto-sdk-cursor</b></div>
+        <div class="kpi"><span class="small">Target</span><b>Local form</b></div>
+        <div class="kpi"><span class="small">Style</span><b>Visible overlay</b></div>
+      </div>
+      <hr>
+      <ol class="steps">
+        <li>Open or reuse the local target tab</li>
+        <li>Wait for the form to appear</li>
+        <li>Guide the cursor to each field</li>
+        <li>Type a few values</li>
+        <li>Click submit and read the generated summary</li>
+      </ol>
+    </section>
+    <aside class="card">
+      <h3>Showtime log</h3>
+      <div class="log" id="log"></div>
+      <hr>
+      <div class="result" id="resultBox">No result captured yet. The cursor is probably still stretching.</div>
+    </aside>
+  </div>
+</div>
+<script src="../RTO.min.js"></script>
+<script src="assets/cursor_showcase.js"></script>
+<script src="assets/demo_living_proof.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTO SDK Lite — 01 Minimal connection</title>
+<link rel="stylesheet" href="assets/sdk.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>01 — Minimal connection <span class="badge">best first stop</span></h1>
+    <p>Detect the extension, request allow-list approval, open or reuse a controlled tab, focus it again, then close it. Tiny, clear, and honest.</p>
+  </div>
+  <div class="demo-journey"><div><div class="demo-journey-title">SDK demo 1 of 3 — Minimal</div><div class="small">Start here, then continue to cursor showcase.</div></div><div class="demo-journey-links"><a href="https://remote-tab-opener.com/RTO_SDK/">SDK home</a><a href="02_cursor_showcase.html">Next</a></div></div>
+  <div style="margin:16px 0"><div class="proof-console" data-rto-proof="sdk" data-proof-title="SDK proof" aria-label="SDK demo storyboard">
+  <div class="proof-console-top"><span></span><span></span><span></span><strong>SDK proof</strong></div>
+  <div class="proof-console-row ok"><b>1</b><span>Connection checked</span><code>RTOconnectOnce</code></div>
+  <div class="proof-console-row"><b>2</b><span>Host policy visible</span><code>allowlist</code></div>
+  <div class="proof-console-row"><b>3</b><span>Controlled tab reused</span><code>tabKey</code></div>
+  <div class="proof-console-row ok"><b>4</b><span>Overlay + highlight</span><code>DOM safe</code></div>
+</div></div>
+
+  <div class="grid grid-2">
+    <section class="card">
+      <h2>What this page demonstrates</h2>
+      <ol class="steps">
+        <li>Detection and bridge setup with <code>RTOconnectOnce()</code></li>
+        <li>Modern 8.5.0 allow-list request flow from the page</li>
+        <li>Stable <code>tabKey</code> reuse for one controlled tab</li>
+        <li>A tiny overlay proof so the control is visible, not magical</li>
+      </ol>
+      <div class="field">
+        <label for="hostInput">Host to request</label>
+        <input id="hostInput" value="">
+      </div>
+      <div class="status" id="statusBox"><span class="dot" id="dot"></span><span id="statusText">Click “Check connection” to begin.</span></div>
+      <hr>
+      <div class="row">
+        <button class="primary" id="btnCheck">Check connection</button>
+        <button class="warn" id="btnAllow">Request allow-list</button>
+        <button class="ok" id="btnOpen">Open / reuse demo tab</button>
+        <button id="btnFocus">Focus demo tab</button>
+        <button class="ghost" id="btnClose">Close demo tab</button>
+      </div>
+      <p class="small">A tiny truth: if the host is not allow-listed yet, the plugin should refuse control. That is a feature, not a bug.</p>
+    </section>
+
+    <aside class="card">
+      <h3>Live log</h3>
+      <div class="log" id="log"></div>
+      <hr>
+      <div class="note">The target page is local to this SDK: <code>examples/targets/lorem_form_demo.html</code>.</div>
+    </aside>
+  </div>
+</div>
+<script src="../RTO.min.js"></script>
+<script src="assets/minimal_connection.js"></script>
+<script src="assets/demo_living_proof.js"></script>
+</body>
+</html>

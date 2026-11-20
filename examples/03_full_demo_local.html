@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTO SDK Lite — 03 Full demo local</title>
+<link rel="stylesheet" href="assets/sdk.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>03 — Full local demo <span class="badge">automation movie</span></h1>
+    <p>A fuller walkthrough that combines detection, allow-list request, tab reuse, visible overlays, form filling, submit, readback, and tab listing.</p>
+  </div>
+  <div class="demo-journey"><div><div class="demo-journey-title">SDK demo 3 of 3 — Full local demo</div><div class="small">Complete local sequence with stable tabKey.</div></div><div class="demo-journey-links"><a href="02_cursor_showcase.html">Previous</a><a href="https://remote-tab-opener.com/RTO_SDK/">SDK home</a></div></div>
+  <div style="margin:16px 0"><div class="proof-console" data-rto-proof="sdk" data-proof-title="SDK proof" aria-label="SDK demo storyboard">
+  <div class="proof-console-top"><span></span><span></span><span></span><strong>SDK proof</strong></div>
+  <div class="proof-console-row ok"><b>1</b><span>Connection checked</span><code>RTOconnectOnce</code></div>
+  <div class="proof-console-row"><b>2</b><span>Host policy visible</span><code>allowlist</code></div>
+  <div class="proof-console-row"><b>3</b><span>Controlled tab reused</span><code>tabKey</code></div>
+  <div class="proof-console-row ok"><b>4</b><span>Overlay + highlight</span><code>DOM safe</code></div>
+</div></div>
+
+  <div class="grid grid-2">
+    <section class="card">
+      <h2>Controls</h2>
+      <div class="row">
+        <button class="primary" id="btnDetect">Detect + register master tab</button>
+        <button class="warn" id="btnAllow">Request allow-list</button>
+        <button class="ok" id="btnRun">Run full demo</button>
+        <button id="btnList">List controlled tabs</button>
+      </div>
+      <div class="field">
+        <label for="hostInput">Host to request</label>
+        <input id="hostInput" value="">
+      </div>
+      <div class="status" id="statusBox"><span class="dot" id="dot"></span><span id="statusText">Ready when you are. The demo tab is not opening itself out of politeness.</span></div>
+      <hr>
+      <div class="note">This page intentionally reuses a stable <code>tabKey</code>. In 8.5.0, that means “same lane, same controlled tab” instead of accidental duplicates.</div>
+      <hr>
+      <div class="codebox"><pre id="raw" style="margin:0;white-space:pre-wrap"></pre></div>
+    </section>
+    <aside class="card">
+      <h3>Step log</h3>
+      <div class="log" id="log"></div>
+      <hr>
+      <h3>Known controlled tabs</h3>
+      <div class="result" id="tabsBox">No list yet.</div>
+    </aside>
+  </div>
+</div>
+<script src="../RTO.min.js"></script>
+<script src="assets/full_demo_local.js"></script>
+<script src="assets/demo_living_proof.js"></script>
+</body>
+</html>
