@@ -1,0 +1,2 @@
+Remote Tab Opener SDK Lite
+SDK package: 8.6.0
